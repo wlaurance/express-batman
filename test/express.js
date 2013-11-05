@@ -7,6 +7,7 @@ var glob = require('glob');
 var _ = require('underscore');
 var async = require('async');
 var request = require('request');
+var fs = require('fs');
 
 var base = 'test/batcave';
 
@@ -23,15 +24,29 @@ describe('express', function() {
 
   it('should serve up batman up at server:port/batcave', function(done) {
     glob(process.cwd() + '/' + base + '/**/*', function(err, files) {
-      var processed = _.map(files, function(f) { return f.replace(process.cwd() + '/', ''); });
+      files = _.filter(files, function(f) {
+        return fs.statSync(f).isFile();
+      });
+      files = _.map(files, function(f) { return f.replace(process.cwd() + '/' + base + '/', ''); });
       function iterator(file, cb) {
         request('http://localhost:' + port + '/' + file, function(e,r,b) {
-          if (e) throw e;
+          var ext = _.last(file.split('.'));
+          var ctype = r.headers['content-type'];
+          switch (ext) {
+            case 'js':
+              ctype.should.be.equal('application/javascript');
+              break;
+            case 'html':
+              ctype.should.be.equal('text/html');
+              break;
+            default:
+              break;
+          }
           r.statusCode.should.equal(200);
-          done();
+          cb();
         });
       }
-      async.each(processed, iterator, done);
+      async.each(files, iterator, done);
     });
   });
 });

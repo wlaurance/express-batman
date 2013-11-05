@@ -24,7 +24,7 @@ Sane defaults, no jokers allowed
 
 Expects a typical [batman directory structure](http://batmanjs.org/docs/structure.html)
 
-Defaults to `process.cwd() + /batcave` for base off the batman app.
+Defaults to `process.cwd() + /batcave` for base of the batman app.
 
 If app is written in [coffee-script](http://coffeescript.org/), coffee is compiled.
 

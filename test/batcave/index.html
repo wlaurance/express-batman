@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="en">
+<head>
+  <title>MyApp</title>
+
+  <script src="vendor/es5-shim.js"></script>
+  <script src="vendor/coffee-script.js"></script>
+
+  <script src="vendor/batman.js"></script>
+
+  <script src="my_app.js.coffee" type="text/coffeescript"></script>
+  <script src="controllers/application_controller.js.coffee" type="text/coffeescript"></script>
+  <script src="controllers/main_controller.js.coffee" type="text/coffeescript"></script>
+  <script src="views/main/main_index_view.js.coffee" type="text/coffeescript"></script>
+</head>
+
+<body>
+  <div data-yield="main"></div>
+
+  <script type="text/coffeescript">MyApp.run()</script>
+</body>
+</html>

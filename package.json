@@ -23,6 +23,14 @@
   },
   "devDependencies": {
     "mocha": "~1.14.0",
-    "should": "~2.0.2"
+    "should": "~2.0.2",
+    "portfinder": "~0.2.1",
+    "express": "~3.4.4"
+  },
+  "dependencies": {
+    "underscore": "~1.5.2",
+    "request": "~2.27.0",
+    "glob": "~3.2.6",
+    "async": "~0.2.9"
   }
 }

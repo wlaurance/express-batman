@@ -1,5 +1,6 @@
 var _ = require('underscore');
 var fs = require('fs');
+var coffee = require('coffee-script');
 
 function batmanExpress(config) {
   var conf = config ? _.clone(config) : {};
@@ -21,6 +22,10 @@ function batmanExpress(config) {
         } else {
           var ctype;
           switch (ext) {
+            case 'coffee':
+              bytes = coffee.compile(bytes.toString());
+              ctype = 'application/javascript';
+              break;
             case 'js':
               ctype = 'application/javascript';
               break;

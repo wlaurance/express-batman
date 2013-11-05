@@ -3,6 +3,13 @@ express-batman
 
 na na na na nanan nananan nananan na batman for expressjs
 
+How to signal express-batman?
+-----------------------------
+
+```
+npm install express-batman
+```
+
 
 What crime does it fight?
 -------------------------

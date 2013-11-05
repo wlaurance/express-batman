@@ -20,5 +20,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wlaurance/express-batman/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.14.0",
+    "should": "~2.0.2"
   }
 }

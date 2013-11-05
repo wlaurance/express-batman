@@ -33,6 +33,7 @@ describe('express', function() {
           var ext = _.last(file.split('.'));
           var ctype = r.headers['content-type'];
           switch (ext) {
+            case 'coffee':
             case 'js':
               ctype.should.be.equal('application/javascript');
               break;

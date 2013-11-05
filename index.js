@@ -19,6 +19,18 @@ function batmanExpress(config) {
         if (err) {
           return res.send(404);
         } else {
+          var ctype;
+          switch (ext) {
+            case 'js':
+              ctype = 'application/javascript';
+              break;
+            case 'html':
+              ctype = 'text/html';
+              break;
+            default:
+              ctype = 'application/octect-stream';
+          }
+          res.set('Content-Type', ctype);
           res.send(bytes);
         }
       });

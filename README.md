@@ -3,6 +3,8 @@ express-batman
 
 na na na na nanan nananan nananan na batman for expressjs
 
+[![Build Status](https://travis-ci.org/wlaurance/express-batman.png?branch=master)](https://travis-ci.org/wlaurance/express-batman)
+
 How to signal express-batman?
 -----------------------------
 
